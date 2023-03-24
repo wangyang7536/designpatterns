@@ -1,16 +1,23 @@
 package org.ocean.patterns.factory;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ShapeFactory {
+    private static final Map<String, Shape> shapes = new HashMap<>();
+
     public Shape getShape(String shapeType) {
-        if (shapeType == null)
-            return null;
-        if (shapeType.equalsIgnoreCase("rectangle")) {
-            return new Rectangle();
-        } else if (shapeType.equalsIgnoreCase("circle")) {
-            return new Circle();
-        } else if (shapeType.equalsIgnoreCase("square")) {
-            return new Square();
+        Shape shape = shapes.get(shapeType);
+        if (shape == null) {
+            if (shapeType.equalsIgnoreCase("rectangle")) {
+                shape = new Rectangle();
+            } else if (shapeType.equalsIgnoreCase("circle")) {
+                shape = new Circle();
+            } else if (shapeType.equalsIgnoreCase("square")) {
+                shape = new Square();
+            }
+            shapes.put(shapeType, shape);
         }
-        return null;
+        return shape;
     }
 }
