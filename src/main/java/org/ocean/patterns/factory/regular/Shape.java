@@ -1,4 +1,4 @@
-package org.ocean.patterns.factory;
+package org.ocean.patterns.factory.regular;
 
 public interface Shape {
     void draw();
