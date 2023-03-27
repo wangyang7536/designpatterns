@@ -1,4 +1,4 @@
-package org.ocean.patterns.factory.regular;
+package org.ocean.patterns.factory.simple;
 
 import java.util.HashMap;
 import java.util.Map;
