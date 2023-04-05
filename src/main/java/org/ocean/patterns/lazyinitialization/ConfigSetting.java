@@ -1,6 +1,8 @@
 package org.ocean.patterns.lazyinitialization;
 
 import com.google.gson.Gson;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -16,12 +18,15 @@ public class ConfigSetting {
     private Map<String, Object> configs;
     private String configFilePath = "/Users/ocean/Workspace/design_patterns/DesignPatterns/src/test/resources" +
             "/LazyInitialization/mock_configs.json";
+    private final static Logger LOG = LoggerFactory.getLogger(ConfigSetting.class);
 
     public ConfigSetting() {
         if (configs == null) {
             try {
                 loadConfigs();
-                System.out.println("Initializing configurations during startup");
+                LOG.debug("Debug log for config Initialization");
+                LOG.info("Initializing configurations during startup");
+                LOG.error("Error log for config Initialization");
             } catch (IOException e) {
                 e.printStackTrace();
             }

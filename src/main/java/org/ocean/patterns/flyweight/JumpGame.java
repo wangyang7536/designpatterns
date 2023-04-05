@@ -19,7 +19,9 @@ public class JumpGame implements Game {
     public JumpGame(Session session) {
         this.session = session;
         try {
+            LOG.debug("Debug log for creating JUMP game");
             LOG.info("The operation of creating JUMP game is time costing");
+            LOG.error("Error log for creating JUMP game");
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             LOG.error("Error while creating JUMP game", e);

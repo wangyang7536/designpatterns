@@ -16,7 +16,9 @@ public class CompareGame implements Game{
     public CompareGame(Session session) {
         this.session = session;
         try {
+            LOG.debug("Debug log for creating COMPARE game");
             LOG.info("The operation of creating COMPARE game is time costing");
+            LOG.error("Error log for creating COMPARE game");
             Thread.sleep(3000);
         } catch (InterruptedException e) {
             LOG.error("Error while creating COMPARE game", e);

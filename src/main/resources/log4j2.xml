@@ -9,11 +9,10 @@
         </File>
     </Appenders>
     <Loggers>
-        <Root level="info">
+        <Root level="error">
             <AppenderRef ref="Console"/>
-            <AppenderRef ref="File"/>
         </Root>
-        <Logger name="com.ocean" level="debug">
+        <Logger name="org.ocean.patterns.lazyinitialization" level="debug">
             <AppenderRef ref="File"/>
         </Logger>
     </Loggers>
