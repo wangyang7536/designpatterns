@@ -1,14 +1,17 @@
 package org.ocean.patterns.singleton;
 
-public class SingleObject {
+public final class SingleObject {
     private String type = "Singleton";
-    private static SingleObject singleObject = new SingleObject();
+    private static SingleObject INSTANCE;
 
     private SingleObject() {
     }
 
-    public static SingleObject getInstance() {
-        return singleObject;
+    public static synchronized SingleObject getInstance() {
+        if(INSTANCE == null) {
+            INSTANCE = new SingleObject();
+        }
+        return INSTANCE;
     }
 
     public String getType() {
